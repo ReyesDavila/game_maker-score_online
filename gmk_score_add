@@ -1,0 +1,16 @@
+///gmk_score_add(nombre,score);
+//Añade un nuevo score online.
+//En nombre colocar el nombre del usuario que ha entrado al score.
+//En score colocar el puntaje obtenido.
+
+nombrex=argument0;
+score=argument1;
+
+if(score>=puntaje00[cantidad_elementos00])
+{
+    http_post_string(score_add_file,"usuario="+string(usuario00)+"&clave="+string(clave00)+"&nombre="+string(nombrex)+"&puntaje="+string(score));
+}
+else
+{
+show_message("El score es muy bajo para entrar en el top 10");
+}
