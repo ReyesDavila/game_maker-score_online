@@ -1,0 +1,38 @@
+///gmk_score_create()
+//deberá ser colocado en el evento create de un objeto.
+
+///////////////////////////Datos a modificar
+usuario00="Dixon123";
+clave00="123456";
+web="https://dixonysusjuegoseducativos.000webhostapp.com/score_online/modelo/";
+cantidad_elementos=10;//la cantidad de scores a visualizar.
+score_get_name_file="score_get.php";
+score_add_name_file="score_add.php";
+score_clear_name_file="score_clear.php";
+score_default_name_file="score_default.php";
+//////// fin Datos a modificar.
+
+//Datos para el sistema.
+score_get_file=string(web)+string(score_get_name_file);
+score_add_file=string(web)+string(score_add_name_file);
+score_clear_file=string(web)+string(score_clear_name_file);
+score_default_file=string(web)+string(score_default_name_file);
+
+//creando arrays vacios
+for(i=0;i<=cantidad_elementos;i+=1)
+{
+nombre00[i]="<nobody>";
+puntaje00[i]=0;
+}
+
+//variables para solicitar score
+stats = -1;
+result = "";
+ID = -1;
+
+///////////////////////////solicitando score
+///score_get(alarm,time);
+//En alarm se deberá colocar el numero de la alarma que reperirá la llamada.
+//En time se colocará el tiempo que tardará en repetirse la alarma.
+gmk_score_get(1,50);
+

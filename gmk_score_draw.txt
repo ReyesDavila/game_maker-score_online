@@ -1,0 +1,48 @@
+///gmk_score_draw(x,y,ancho,sep,elementos);
+//Dibujará la tabla de scores según las especificaciones:
+//x: posicion x en la room;
+//y: osicion y en la room;
+//ancho: ancho máximo que podrá tener el score.
+//sep: separacion de las lineas.
+//elementos: la cantidad de scores a visualizar.
+//Ejemplo: dibujar_score(30,80,450,40,10);
+
+dx00=argument0;
+dy00=argument1;
+ancho00=abs(floor(argument2));
+sep00=argument3;
+cantidad_elementos00=argument4;
+for(i00=1;i00<=cantidad_elementos00;i00+=1)
+{
+    text100=string(i00)+". "+string(nombre00[i00])+"..........................................................";
+    length100=string_length(text100);
+    text200=string(puntaje00[i00]);
+    width100=string_width(text100);
+    width200=string_width(text200);
+    
+    //sumando espacio
+    while((width100+width200)<ancho00)
+    {
+        text100=string_insert(".",text100,length100);
+        length100=string_length(text100);
+        width100=string_width(text100);
+    }
+    
+    //Restando espacio
+    while((width100+width200)>ancho00)
+    {
+        text100=string_copy(text100,1,length100-2);
+        length100=string_length(text100);
+        width100=string_width(text100);
+    }
+    pos200=width100;
+    //sumando espacio
+    while((pos200+width200)<ancho00)
+    {
+        pos200+=1;
+    }
+
+    draw_text(dx00,dy00,text100);//Dibujando nombre
+    draw_text(dx00+pos200,dy00,text200);//Dibujando puntaje
+    dy00+=sep00;
+}

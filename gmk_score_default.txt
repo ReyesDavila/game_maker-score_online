@@ -1,0 +1,3 @@
+///score_default();
+//Establecerá el score predeterminado.
+http_post_string(score_default_file,"usuario="+string(usuario00)+"&clave="+string(clave00));

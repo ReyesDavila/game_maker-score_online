@@ -1,0 +1,3 @@
+///gmk_score_clear();
+//Borrará todo el score online.
+http_post_string(score_clear_file,"usuario="+string(usuario00)+"&clave="+string(clave00));

@@ -1,0 +1,6 @@
+///gmk_score_get(alarm,time);
+//En alarm se deberá colocar el numero de la alarma que reperirá la llamada.
+//En time se colocará el tiempo que tardará en repetirse la alarma.
+
+ID = http_post_string(score_get_file,"usuario="+string(usuario00)+"&clave="+string(clave00));
+alarm[argument0]=argument1;

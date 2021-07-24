@@ -1,0 +1,14 @@
+///gmk_score_process(string,cantidad_elementos);
+//busca la informacion del archivo ini y crea los arrays.
+//En string se colocará el string que conforma el archivo ini.
+//En cantidad_elementos se coloca la cantidad de scores a visualizar.
+
+ini_open_from_string(argument0);
+cantidad_elementos00=argument1;
+for(i00=1;i00<=cantidad_elementos00;i00+=1)
+{
+section00='score_'+string(i00);
+nombre00[i00]= ini_read_string( section00, 'nombre', 'nobody' );
+puntaje00[i00]= ini_read_real( 'score_'+string(i00), 'puntaje', 0 );
+}
+ini_close();

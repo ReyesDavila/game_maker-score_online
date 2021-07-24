@@ -1,0 +1,14 @@
+///gmk_score_asynchronous();
+//Se ejecutará solo cuando game maker reciba una respuesta del archivo php.
+
+if (ds_map_find_value(async_load,"id")) == ID {
+    stats = ds_map_find_value(async_load,"status");
+    result = ds_map_find_value(async_load,"result");
+}
+
+if stats == 0 
+{
+    //Creando ini y cargando datos
+    gmk_score_process(result,cantidad_elementos);
+}
+
